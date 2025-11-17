@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <style>
+        body {
+            /* Center the card vertically and horizontally in the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0; /* Optional: adds a background color to the page */
+        }
+
+        .card-container {
+            /* 1. Card Container specs */
+            width: 300px;
+            height: 400px;
+            
+            /* 4. Styling (Box Model) */
+            padding: 20px; /* Inside the card */
+            border: 1px solid #ccc; /* Optional border */
+            margin: auto; /* Centers the card horizontally if not using flexbox on body */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+            border-radius: 10px; /* Rounded corners */
+            background-color: #fff; /* Optional: card background color */
+            
+            /* Additional styles for layout */
+            text-align: center; /* Centers the text content */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Positions content at the top of the card */
+        }
+
+        .profile-img {
+            /* 2. Profile Image specs */
+            width: 150px;
+            height: 150px; /* Ensure equal width/height for a perfect circle */
+            border-radius: 50%; /* Creates the circular shape */
+            
+            /* 3. Positioned at the top of the card (handled by flex-direction: column on parent) */
+            margin-bottom: 15px; /* Adds space below the image */
+        }
+
+        h2 {
+            /* 3. Profile Details - name using h2 tag */
+            margin-top: 0; /* Remove default margin for closer placement to image */
+            margin-bottom: 5px;
+            color: aqua;
+        }
+
+        p {
+            /* 3. Profile Details - description using p tag */
+            margin-top: 0;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <!-- Replace 'profile-image.jpg' with an actual image source URL -->
+        <img src="data:image/jpeg;base64,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" alt="Profile Picture" class="profile-img">
+        <h2>Yasmeena riyaz</h2>
+        <p>Learning from Masai School</p>
+    </div>
+</body>
+</html>
